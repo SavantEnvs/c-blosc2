@@ -1,0 +1,10 @@
+project: savantenvs/c-blosc2
+target: decompress_chunk_fuzzer
+
+cmds:
+  - cmd: /mayhem/decompress_chunk_fuzzer
+    libfuzzer: true
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/decompress_chunk_fuzzer/testsuite

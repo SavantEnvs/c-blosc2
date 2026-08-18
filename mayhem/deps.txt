@@ -1,0 +1,14 @@
+# c-blosc2 codec dependencies that upstream's CMake pulls in with FetchContent.
+#
+# Single source of truth for BOTH mayhem/vendor-deps.sh (image-build-time pre-fetch into
+# $BLOSC_DEPS_CACHE, outside /mayhem) and mayhem/build.sh (offline restore + -DBLOSC_*_SOURCE_DIR).
+# Whitespace-separated columns:
+#
+#   name  version-cache-var-in-CMakeLists  source-dir-cache-var  version  sha256  url-template(@V@=version)
+#
+# The version column is cross-checked against CMakeLists.txt on every build: if upstream bumps a
+# codec, the build FAILS loudly (stale pin) instead of silently reaching for the network.
+lz4     BLOSC_LZ4_VERSION     BLOSC_LZ4_SOURCE_DIR     1.10.0  537512904744b35e232912055ccf8ec66d768639ff3abe5788d90d792ec5f48b  https://github.com/lz4/lz4/archive/refs/tags/v@V@.tar.gz
+zlib-ng BLOSC_ZLIBNG_VERSION  BLOSC_ZLIBNG_SOURCE_DIR  2.3.3   f9c65aa9c852eb8255b636fd9f07ce1c406f061ec19a2e7d508b318ca0c907d1  https://github.com/zlib-ng/zlib-ng/archive/refs/tags/@V@.tar.gz
+zstd    BLOSC_ZSTD_VERSION    BLOSC_ZSTD_SOURCE_DIR    1.5.7   37d7284556b20954e56e1ca85b80226768902e2edabd3b649e9e72c0c9012ee3  https://github.com/facebook/zstd/archive/refs/tags/v@V@.tar.gz
+zfp     BLOSC_ZFP_VERSION     BLOSC_ZFP_SOURCE_DIR     1.0.1   4984db6a55bc919831966dd17ba5e47ca7ac58668f4fd278ebd98cd2200da66f  https://github.com/LLNL/zfp/archive/refs/tags/@V@.tar.gz
