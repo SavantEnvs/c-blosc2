@@ -1,0 +1,6 @@
+project: savantenvs/c-blosc2
+target: compress_chunk_fuzzer
+
+cmds:
+  - cmd: /mayhem/compress_chunk_fuzzer
+    libfuzzer: true

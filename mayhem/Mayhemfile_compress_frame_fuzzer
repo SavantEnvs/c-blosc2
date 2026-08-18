@@ -1,0 +1,6 @@
+project: savantenvs/c-blosc2
+target: compress_frame_fuzzer
+
+cmds:
+  - cmd: /mayhem/compress_frame_fuzzer
+    libfuzzer: true
