@@ -1,0 +1,11 @@
+# seed-from: https://app.mayhem.security/savantenvs/c-blosc2/decompress-frame-fuzzer
+project: savantenvs/c-blosc2
+target: decompress_frame_fuzzer-mined-b298e4f
+
+cmds:
+  - cmd: /mayhem/decompress_frame_fuzzer
+    libfuzzer: true
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/decompress_frame_fuzzer-mined-b298e4f/testsuite
